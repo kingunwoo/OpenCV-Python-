@@ -1,13 +1,13 @@
 import numpy as np
 import cv2
 
-# Àü¿ª º¯¼ö ¼±¾ð
-image = np.ones((300, 300), np.uint8) * 255
+# ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+image = np.ones((300, 300,3), np.uint8) * 100
 title = "Draw Event"
 
 def onMouse(event, x, y, flags, param):
     global image
-    col = (255, 0, 0)
+    col = (0, 0, 255)
     pt = (x, y)
     if event == cv2.EVENT_LBUTTONDOWN:
         cv2.circle(image, pt, 100, col, 5, 1)
