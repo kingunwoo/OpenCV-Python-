@@ -1,5 +1,4 @@
 import cv2
-from Common.utils import print_matInfo
 
 title1, title2 = "16bit unchanged", '32bit unchanged'
 color2unchanged1 = cv2.imread(r"images\read_16.tif", cv2.IMREAD_UNCHANGED)
@@ -14,8 +13,6 @@ print(title2, "원소 자료형", type(color2unchanged2[10][10][0]))
 print(title2, "화소값(3원소)", color2unchanged2[10, 10])
 print()
 
-print_matInfo(title1, color2unchanged1)
-print_matInfo(title2, color2unchanged2)
 cv2.imshow(title1, color2unchanged1)
 cv2.imshow(title2, color2unchanged2)
 cv2.waitKey(0)
