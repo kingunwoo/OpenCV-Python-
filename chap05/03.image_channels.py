@@ -1,6 +1,6 @@
 import cv2
 
-image = cv2.imread( "images/color.jpg", cv2.IMREAD_COLOR)   # 영상 읽기
+image = cv2.imread( "/home/gun/Desktop/OpenCV_with_python/OpenCV-Python-/chap05/images/color.jpg", cv2.IMREAD_COLOR)   # 영상 읽기
 if image is None: raise Exception("영상 파일 읽기 오류 발생")  # 예외 처리
 if image.ndim != 3: raise Exception("컬러 영상 아님")
     

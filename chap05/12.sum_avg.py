@@ -1,6 +1,6 @@
 import numpy as np, cv2
 
-image = cv2.imread("images/sum_test.jpg", cv2.IMREAD_GRAYSCALE)
+image = cv2.imread("/home/gun/Desktop/OpenCV_with_python/OpenCV-Python-/chap05/images/sum_test.jpg", cv2.IMREAD_COLOR)
 if image is None: raise Exception("영상 파일 읽기 오류 발생")
     
 mask = np.zeros(image.shape[:2], np.uint8)

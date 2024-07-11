@@ -9,6 +9,7 @@ dst1 = cv2.gemm(src1, src2, alpha, None, beta, flags=cv2.GEMM_1_T)
 dst2 = cv2.gemm(src1, src2, alpha, None, beta, flags=cv2.GEMM_2_T)
 dst3 = cv2.gemm(src1, src3, alpha, None, beta)
 
-titles = ['src1','src1','src1','dst1','dst2','dst3']
+titles = ['src1','src2','src3','dst1','dst2','dst3']
+
 for title in titles:
     print("[%s] = \n%s\n" % (title, eval(title)))

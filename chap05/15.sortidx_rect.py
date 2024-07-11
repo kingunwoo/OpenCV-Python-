@@ -6,7 +6,7 @@ def print_rects(rects):
     print("-" * 46)
     for i, (x,y, w,h, a) in enumerate(rects):		# 저장 데이터 출력
          print("rects[%i] = [(%3d,%3d) from (%3d,%3d)] %5d" %(i, w, h, x, y, a))
-    print()
+
 
 rands = np.zeros((10, 5), np.uint16)        		# 5행 5열 행렬 생성
 starts = cv2.randn(rands[:, :2 ], 100, 50)     		# 시작좌표  랜덤생성
