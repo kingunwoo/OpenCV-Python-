@@ -1,6 +1,6 @@
 import cv2
 
-image = cv2.imread("images/pixel.jpg", cv2.IMREAD_GRAYSCALE) # 영상 읽기
+image = cv2.imread("/home/gun/Desktop/OpenCV_with_python/OpenCV-Python-/chap06/images/pixel.jpg", cv2.IMREAD_GRAYSCALE) # 영상 읽기
 if image is None: raise Exception("영상 파일 읽기 오류")
 
 (x,y),(w,h) = (180, 37), (15, 10)                   # 좌표는 x, y

@@ -1,7 +1,20 @@
 import numpy as np, cv2
-from Common.histogram import draw_histo
 
-image = cv2.imread("images/equalize.jpg", cv2.IMREAD_GRAYSCALE) # 영상 읽기
+def draw_histo(hist, shape=(1000, 1280)):
+    hist_img = np.full( shape, 255, np.uint8)
+    cv2.normalize(hist, hist, 0, shape[0], cv2.NORM_MINMAX)
+    gap = hist_img.shape[1]/hist.shape[0]             # 한 계급 너비
+
+    for i, h in enumerate(hist):
+        x = int(round(i * gap))                         # 막대 사각형 시작 x 좌표
+        w = int(round(gap))
+        roi = (x, 0, w, int(h))
+        cv2.rectangle(hist_img, roi, 150, -1)
+        cv2.rectangle(hist_img, roi, 0, 1)
+
+    return   cv2.flip(hist_img, 0)            
+
+image = cv2.imread("/home/gun/Desktop/OpenCV_with_python/OpenCV-Python-/chap06/images/equalize.jpg", cv2.IMREAD_GRAYSCALE) # 영상 읽기
 if image is None: raise Exception("영상 파일 읽기 오류")
 
 bins, ranges = [256], [0, 256]

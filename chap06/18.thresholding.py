@@ -4,7 +4,7 @@ def onThreshold(value):
     result  = cv2.threshold(image, value, 255, cv2.THRESH_BINARY)[1]
     cv2.imshow("result", result)
 
-image = cv2.imread("images/color_space.jpg", cv2.IMREAD_GRAYSCALE) # 컬러 영상 읽기
+image = cv2.imread("/home/gun/Desktop/OpenCV_with_python/OpenCV-Python-/chap06/images/color_space.jpg", cv2.IMREAD_GRAYSCALE) # 컬러 영상 읽기
 if image is None: raise Exception("영상 파일 읽기 오류")
 
 cv2.namedWindow("result")

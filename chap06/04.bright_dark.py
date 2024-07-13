@@ -1,6 +1,6 @@
 import cv2
 
-image = cv2.imread("images/bright.jpg", cv2.IMREAD_GRAYSCALE)    # 영상 읽기
+image = cv2.imread("/home/gun/Desktop/OpenCV_with_python/OpenCV-Python-/chap06/images/bright.jpg", cv2.IMREAD_GRAYSCALE)    # 영상 읽기
 if image is None: raise Exception("영상 파일 읽기 오류")
 
 # OpenCV 함수 이용
