@@ -1,5 +1,7 @@
 import numpy as np
 import cv2
+import matplotlib
+matplotlib.use('TkAgg')
 import matplotlib.pyplot as plt
 #hsv = h 0~179, s 0~255, v 0~255
 

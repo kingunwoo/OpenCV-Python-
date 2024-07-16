@@ -1,7 +1,11 @@
+import sys,os
 import numpy as np, cv2
-from Common.filters import filter
 
-image = cv2.imread("images/filter_sharpen.jpg", cv2.IMREAD_GRAYSCALE) # 영상 읽기
+sys.path.append(os.path.dirname(os.path.abspath(os.path.dirname(__file__))))
+
+from Common import filter_convolution_2d as filter
+
+image = cv2.imread("/home/gun/Desktop/OpenCV_with_python/OpenCV-Python-/chap07/images/filter_sharpen.jpg", cv2.IMREAD_GRAYSCALE) # 영상 읽기
 if image is None: raise Exception("영상파일 읽기 오류")
 
 # 샤프닝 마스크 원소 지정 
@@ -14,7 +18,7 @@ data2 = [[-1, -1, -1],
 mask1 = np.array(data1, np.float32).reshape(3, 3)
 mask2 = np.array(data2, np.float32)
 
-sharpen1 = filter(image, mask1)                     # 회선 수행 – 저자 구현 함
+sharpen1 = filter(image, mask1)           
 sharpen2 = filter(image, mask2) 
 sharpen1 = cv2.convertScaleAbs(sharpen1)
 sharpen2 = cv2.convertScaleAbs(sharpen2)
